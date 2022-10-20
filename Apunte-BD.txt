@@ -1,0 +1,358 @@
+Base de datos
+-------------- 
+Modulo 1: datos
+--------
+Conceptos claves:
+-> Medios de almacenamiento
+-> Archivos
+   --> operaciones y forma de organización
+   --> diferentes tipos 
+      --> Archivos sequenciales
+      --> Hash
+          --> Encadanamiento
+          --> Direccionamiento
+
+
+Bienvenidos a la empresa File Data: caso práctico
+----------------------------------
+Jefa de desarrollo de la empresa "File Data"
+
+Bienvenidos mi nombre es María y soy la jefa de desarrollo de la empresa "File Data",
+mi trabajo consiste en coordinar y velar por el correcto desarrolo de los pedidos
+de nuestro cliente más reciente: la Universidad General Puls-ar.
+
+Los convoco hoy para que juntos podamos llevar adelante el proyecto que nos solicitan.
+
+La Universidad General Puls-ar cuenta con una de las bibliotecas más grandes de la región.
+
+Los directivos notaron que cada vez le es más díficil contar con la capacidad física 
+necesaria para almacenar la información, a la hora de saber que alumno tiene prestado cada
+libro.
+
+Por lo que decidieron abandonar los registros en papel y migrar a un ambiente informático
+con el objetivo de tener mayor control, y mejores estadísticas.
+
+Como parte fundamental de mi equipo a partir de ahora, deberás trabajar en la creación
+y el desarrollo de las bases de datos para este nuevo sistema bibliotecario.
+
+Como requisito los directivos de la universidad nos piden lo siguiente:
+
+1) Necesitamos un sistema que sea capaz de registrar todos nuestros lectores asociados 
+  y nuestros libros.
+
+2) En todo momento debemos tener presente que un lector puede tener prestado más de 1 libro, 
+  pero nunca el mismo más de una vez.
+
+  Es decir, solo libros diferentes entran en el préstamo a cada lector.
+
+3) De cada libro tenemos disponibilidad suficiente para prestarlos a todos los lectores al mismo
+  tiempo.
+
+4) Sobre los libros debemos conocer su nombre, autor, ISBN del libro, el nombre de la editorial, y 
+  el año de publicación.
+
+5) Además, cuando ingresamos un nuevo libro al sistema, precisamos enviarle a los lectores, un
+  newsletter vía email, para darles a conocer la disponibilidad de este nuevo material.
+
+6) Así mismo, necesitamos estadísticas, como por ejemplo, conocer en todo momento, cuáles libros,
+  hemos prestado a un lector en particular, los libros más prestados en determinadas fechas,
+  el promedio de edad de nuestros lectores o la mayor y menor edad de los mismos.
+
+Solucionar el problema
+----------------------
+Para comenzar a trabajar y poder solucionar el problema de nuestro cliente de forma eficaz 
+y eficiente, deberás tener en cuenta, algunos conceptos importantes como:
+
+ 1) Lenguaje de definición de datos ( siglas en inglés DDL que significan "Data Definition Language" )
+   --> para la creación, modificación e eliminación de tablas
+
+ 2) Lenguaje de manipulación de datos ( siglas en inglés DML que significan "Data Manipulation Language" )
+   --> para la inserción, modificación e eliminación de datos
+
+ 3) Entidades, atributos, tipos de datos
+   --> aprenderemos los conceptos de entidades, atributos, y tipos de datos
+
+ 4) Relaciones entre tablas
+
+ 5) Vistas, funciones, procedimientos almacenados y triggers
+
+
+Video de inmersión  -> Base de Datos - Módulo 1
+-------------------
+Diferentes medios de almacenamiento
+-------------------------------------
+En esta unidad 1 conoceremos los diferentes medios de almacenamiento, 
+como son:
+ - las tarjetas de memoria
+ - discos compactos
+ - cintas magnéticas
+ - y detallaremos sobre uno de los medios más utilizados: el disco rígido.
+
+Disco rígido  o disco duro
+----------------------------- 
+Es un dispositivo de almacenamiento de datos que emplea un sistema de grabación
+magnética para almacenar y recuperar archivos digitales. 
+Se compone de 1 o más discos, recubiertos con material magnético y unidos por un 
+mismo eje que gira a una gran velocidad dentro de una caja metálica sellada.
+
+Sobre cada plato y en cada una de sus caras, se sitúa un cabezal de lectura y escritura,
+que flota sobre una delgada lamina de aire generada por la rotación de los discos.
+
+Concepto de archivo y los diferentes tipos
+-------------------------------------------
+¿Qué es un archivo?
+Es un conjunto de bytes que son almacenados en un dispositivo, identificados por un nombre,
+y la descripción de la carpeta o directorio que lo contiene.
+
+A los archivos informáticos se los llama así, porque son el equivalente digital a los archivos
+escritos en expedientes, tarjetas, libretas, papel o micro-fichas del entorno de oficina
+tradicional.
+
+Operaciones sobre los archivos
+--------------------------------
+Las operaciones posibles sobre los registros de un archivo son:
+ - Insertar
+ - Borrar
+ - Buscar
+ - Actualizar
+
+Archivo secuencial
+-------------------
+Un archivo secuencial es la forma más común de escritura de archivo.
+
+ - Se emplea un formato fijo para los registros, 
+ - son de la misma longitud y constan del mismo número de campos de tamaño fijo con un orden determinado.
+
+ - Se nececita almanenar los valores de cada campo, 
+ - el nombre del campo y la longitud de cada uno, son atributos de la estructura del archivo
+
+ - Cada registro tiene un campo clave que lo identifica 
+ - los registros se almacenan en secuencia por clave
+
+Archivos de direccionamiento calculado
+---------------------------------------
+Los archivos de direccionamiento calculado, también conocidos como dispersos o hashing, 
+proporcionan un acceso muy rápido a los registros bajo ciertas condiciones de búsqueda.
+
+La condición de búsqueda se realiza sobre un único campo del registro conocido como 
+campo de direccionamiento calculado. 
+
+Este campo también se llama clave hash.
+
+El funcionamiento de este tipo de orgnización, se basa en establecer una función hash que,
+una vez aplicada sobre el valor del campo de direccionamiento de un registro, 
+produciría la dirección del bloque de disco en el que almacena el registro buscado.
+
+tabla hash
+------------ 
+Una tabla hash es una estructura de datos, también conocida como tabla fragmentada.
+
+Una estructura esta basada en la operación en la cual se asocian claves con valores.
+
+Esto permite lograr acceso muy rápidos al momento de buscar información.
+
+Indice
+------
+Un indice es una estructura de datos que mejora la velocidad de las operaciones, 
+por medio de un identificador único, de cada fila de una tabla, 
+permitiendo un rápido acceso a los registros en una base de datos.
+
+Tipos de índices
+--------------------
+Existen diferentes tipos de índice, según la función que cumple el campo por el cual
+indexamos.
+
+ - Primario:    si el campo es clave para el registro
+ 
+ - Secundario:  cuando NO es un campo clave
+
+ - Agrupado:    a partir de un campo con valores repetidos, el índice optimiza la búsqueda 
+                sobre dichos valores
+
+ - Multinivel:  el índice aplica sobre diferentes campos
+
+
+Arboles
+-------- 
+Un árbol es un tipo abstracto de datos ampliamente usado que imita la estructura jerárquica de un 
+árbol:
+ - con un valor en la raíz y sub-arboles 
+ - con un nodo padre, representado como un conjunto de nodos enlazados.
+
+Para el uso eficiente de índices existen diferentes tipos de árboles.
+
+Algunos ejemplso que vermos son:
+ - Arboles AVL
+ - Arboles B
+ - Arboles B+
+
+Instalación de una Base de datos
+------------------------------------ 
+!Bienvenidos!
+
+En esta primera instancia, vamos a generar:
+ -  la instalación de un motor de base de datos
+
+Como 1° medida debemos poseer un motor de base de datos,
+el cual nos ayudará a:
+ - mantener nuestros registros almacenados
+
+permitiendonos:
+ - actualizar o eliminar los mismos conforme nuestro sistema
+   lo vaya requiriendo.
+
+también será el encargado de:
+ - retornar el resultado de los datos consultados
+
+estos datos es un conjunto, son los que nos darán:
+ - la información requerida por el sistema.
+   --> como ser: estadísticas, listas de correo para campañas de marketing,
+                o comunicación con los usuarios,
+                obtener el conocimiento de que esta ocurriendo en el propio sistema. 
+
+Motor de base de datos
+----------------------- 
+El motor de base de datos no es más que un componente de software, que instalamos en nuestras
+computadoras o servidores.
+
+Será el encargado de acceder al medio de almacenamiento de nuestro computador, 
+discos rígidos, discos de estado sólidos (SSD --> Solid State Drive) 
+y demás para poder organizar los ficheros y estructuras necesarias para tal fin.
+
+El motor de base de datos se encargará de interactuar:
+ - con el procesador,
+ - la memoria volatil, 
+ - y los medios de almacenamiento
+
+desligandonos de realizar esta tarea compleja y que requeriría de 
+profundos conocimientos en electrónica.
+
+PostgreSQL
+----------- 
+Durante el curso utilizaremos con fines prácticos PostgreSQL.
+
+Elejiremos la versión de acuerdo al sistema operativo de nuestra computadora,
+e inicializaremos la descarga.
+
+Link para descargar el motor de base de datos de PostgreSQL:
+https://www.postgresql.org/download/
+
+La instalación es tan sencilla como hacer click en el archivo descargado, 
+y seguir los pasos solicitados.
+
+Durante la instalación se agregarán los paquetes necesarios para su funcionamiento,
+y algunas herramientas opcionales; 
+
+pero decidimos instalarlas todas, ya que las utilizaremos a lo largo del curso.
+
+Enter las herramientas que se instalaran tendremos:
+ - el sistema de gestión de base de datos, como la más importante
+   --> que es el nexo (o unión) entre nosotros y el propio motor de base de datos.
+
+Cabe mencionar que PostgreSQL es un sistema de datos relacional, una de las 
+tecnologías más empleadas en la actualidad, cuyo conceptos y virtudes, 
+veremos en el transcurso de la cursada.
+
+Existen muchas versiones de PostgreSQL, pero como regla general, sabemos que son 
+más seguras las últimas versiones estables, donde se fueron aplicando un conjunto 
+de mejoras de seguridad, para la protección de nuestros datos, 
+y han sido 100% probadas.
+
+La versión que elegiremos para la instalación es la 10.17, que se encuentra 
+disponible para todos los sistemas operativos de computadores y servidores, 
+como linux, mac, windows, en sus plataformas de 32 y 64 bit.
+
+
+Motor de base de datos => es un programa
+SGBD => Sistemad de Gestión de Base de datos => otro programa
+Cuando vos instalas PostgreSQL 
+  -> instalas tanto el motor de base de datos, 
+  -> como el SGBD para el motor de base de datos PostgreSQL => pgAdmin 4
+
+  pgAdmin 4 = SGBD
+
+Módulo 2 -> Base de datos y modelo relacional
+--------
+Sistema de Gestión de Base de datos => SGBD en Español
+
+DataBase Management Systems         => DBMS en Inglés
+
+base de datos = BD
+
+Modelo de datos = Modelo de base de datos
+
+Conceptos a ver
+---------------
+Modelos de BD
+  --> Modelo de Red
+  --> Modelo Jerárquico 
+  --> Modelo Relacional
+
+Diagrama de Entidad-Relación
+  --> Reglas de Codd
+  --> Dependencia funcional
+
+Formas formales
+
+Normalización de base de datos
+
+Módulo 2 -> Tema 1: modelo de datos y sistemas de gestión de BD (SGBD)
+--------    ------
+Modelo de datos  (concepto)
+---------------- 
+  --> Serie de conceptos que describen:
+    
+      --> datos
+      --> sus relaciones
+      --> sus retricciones
+    
+    utiles para representar, de manera abstracta
+    el mundo real.  
+
+--> Permite la representación de los datos, y hacerlos
+    fáciles de comprender.
+
+--> Facilitan el diseño de BD.
+
+--> Util para especificar los tipos de datos, 
+    y la forma en la que están organizados.
+
+
+
+
+Modelo de datos  (componentes)
+---------------- 
+4 componentes lógicos
+ --> 1) Espacio de datos 
+        -> Conjunto de elementos atómicos y de relaciones
+
+ --> 2) Restricciones de definición de tipo 
+        -> Especificación de restricciones aplicadas a las
+           relaciones en el espacio de datos
+
+--> 3) Operaciones de manipulación           
+        -> Conjunto de operaciones para:
+           - crear y destruir elementos
+           - modificar relaciones entre ellos
+
+--> 4) Lenguaje de predicados
+          -> que permite identificar elementos individuales de la BD
+           (por medio de sus propiedades lógicas)
+
+DDL: Data Definition Language 
+  --> sirve para especificar la estructura y restricciones
+
+DML: Data Manipulation Language
+  --> ofrece mecanismos:
+    --> para recuperar datos y actualizar datos de una BD
+
+Sistemas de Gestión de Base de Datos (SGBD - Español, DBMS - Ingles)
+------------------------------------
+Un SGBD:
+ - es una capa de software necesaria para: 
+   -> crear, 
+   -> manipular
+   -> recuperar
+  
+  datos desde una BD.
+
